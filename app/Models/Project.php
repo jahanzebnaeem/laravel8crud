@@ -15,5 +15,11 @@ class Project extends Model
         'cost' => 'float'
     ];
 
-    protected $gruaded = [];
+    protected $fillable = [
+        'name',
+        'introduction',
+        'created_at',
+        'location',
+        'cost'
+    ];
 }

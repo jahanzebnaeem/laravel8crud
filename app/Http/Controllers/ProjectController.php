@@ -129,7 +129,7 @@ class ProjectController extends Controller
     {
         $client = new Client();
         // $url = "https://dev.to/api/articles/me/published";
-        $url = "https: //api.openweathermap.org/data/2.5/weather";
+        $url = "https://api.openweathermap.org/data/2.5/weather";
 
         $params = [
             //If you have any Params Pass here
@@ -139,17 +139,18 @@ class ProjectController extends Controller
         ];
 
         $headers = [
-            // 'api-key' => 'k3Hy5qr73QhXrmHLXhpEh6CQ'
+            'api-key' => 'k3Hy5qr73QhXrmHLXhpEh6CQ'
         ];
 
         $response = $client->request('GET', $url, [
-            'json' => $params,
+            // 'json' => $params,
             // 'headers' => $headers,
+            'query' => $params,
             'verify'  => false,
         ]);
 
         $responseBody = json_decode($response->getBody());
-        dd($responseBody);
+        // dd($responseBody);
 
         return view('projects.apiwithkey', compact('responseBody'));
     }

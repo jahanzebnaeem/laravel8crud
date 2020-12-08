@@ -18,6 +18,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::prefix('projects')->group(function () {
+    Route::get('apiwithoutkey', [ProjectController::class, 'apiWithoutKey'])->name('apiWithoutKey');
+    Route::get('apiwithkey', [ProjectController::class, 'apiWithKey'])->name('apiWithKey');
+});
+
 // Projects routes
 Route::resource('projects', ProjectController::class);
 

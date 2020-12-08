@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Project;
 use Illuminate\Http\Request;
+use GuzzleHttp\Client;
 
 class ProjectController extends Controller
 {
@@ -107,5 +108,49 @@ class ProjectController extends Controller
 
         return redirect()->route('projects.index')
             ->with('success', 'Project deleted successfully');
+    }
+
+    public function apiWithoutKey()
+    {
+        $client = new Client(); //GuzzleHttp\Client
+        $url = "https://api.github.com/users/jahanzebnaeem/repos";
+
+
+        $response = $client->request('GET', $url, [
+            'verify'  => false,
+        ]);
+
+        $responseBody = json_decode($response->getBody());
+
+        return view('projects.apiwithoutkey', compact('responseBody'));
+    }
+
+    public function apiWithKey()
+    {
+        $client = new Client();
+        // $url = "https://dev.to/api/articles/me/published";
+        $url = "https: //api.openweathermap.org/data/2.5/weather";
+
+        $params = [
+            //If you have any Params Pass here
+            'q' => 'Pakistan',
+            'appid' => '695ca5f03b96757465f1d38174759d66',
+            'units' => 'metric'
+        ];
+
+        $headers = [
+            // 'api-key' => 'k3Hy5qr73QhXrmHLXhpEh6CQ'
+        ];
+
+        $response = $client->request('GET', $url, [
+            'json' => $params,
+            // 'headers' => $headers,
+            'verify'  => false,
+        ]);
+
+        $responseBody = json_decode($response->getBody());
+        dd($responseBody);
+
+        return view('projects.apiwithkey', compact('responseBody'));
     }
 }

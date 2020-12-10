@@ -1,0 +1,53 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2576
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 HelveticaNeue-Bold;\f1\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;\red9\green10\blue10;
+\red27\green31\blue34;\red255\green255\blue255;}
+{\*\expandedcolortbl;;\cssrgb\c0\c1\c1;\cssrgb\c100000\c100000\c100000\c0;\cssrgb\c3143\c3536\c3925;
+\cssrgb\c14118\c16078\c18039;\cssrgb\c100000\c100000\c100000;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\})}{\leveltext\leveltemplateid1\'02\'00);}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\})}{\leveltext\leveltemplateid101\'02\'00);}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid102\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li1440\lin1440 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid103\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li2160\lin2160 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\})}{\leveltext\leveltemplateid201\'02\'00);}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid3}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b\fs32 \AppleTypeServices\AppleTypeServicesF65539 \cf2 \cb3 \expnd0\expndtw0\kerning0
+Step 1: Install the package:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls1\ilvl0
+\f1\b0\fs28 \AppleTypeServices\AppleTypeServicesF65539 \cf4 \kerning1\expnd0\expndtw0 {\listtext	1)	}\expnd0\expndtw0\kerning0
+composer require barryvdh/laravel-dompdf\
+\pard\tx566\pardeftab720\partightenfactor0
+
+\f0\b\fs32 \AppleTypeServices\AppleTypeServicesF65539 \cf2 Step 2: Setting up:
+\f1\b0\fs28 \AppleTypeServices\AppleTypeServicesF65539 \cf4 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls2\ilvl0\cf4 \kerning1\expnd0\expndtw0 {\listtext	1)	}open\expnd0\expndtw0\kerning0
+ config/app.php file\
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\partightenfactor0
+\ls2\ilvl1\cf4 {\listtext	\uc0\u8259 	}add Barryvdh\\DomPDF\\ServiceProvider::class, to ServiceProvider\
+\ls2\ilvl1\kerning1\expnd0\expndtw0 {\listtext	\uc0\u8259 	}\expnd0\expndtw0\kerning0
+optionally use the facade for shorter code \
+\pard\tx1660\tx2160\pardeftab720\li2160\fi-2160\partightenfactor0
+\ls2\ilvl2\cf4 {\listtext	\uc0\u8259 	}add 'PDF' => Barryvdh\\DomPDF\\Facade::class, to facades\
+\pard\tx220\tx720\tx1133\tx1700\pardeftab720\li720\fi-720\partightenfactor0
+\ls2\ilvl0\cf4 \kerning1\expnd0\expndtw0 {\listtext	2)	}For 
+\fs32 \AppleTypeServices \cf5 \cb6 \expnd0\expndtw0\kerning0
+l
+\fs28 \AppleTypeServices\AppleTypeServicesF65539 \cf4 \cb3 ocal configurations file config/dompdf.php\
+\pard\tx940\tx1440\tx1700\pardeftab720\li1440\fi-1440\partightenfactor0
+\ls2\ilvl1\cf4 {\listtext	\uc0\u8259 	}php artisan vendor:publish\
+\pard\tx566\tx1133\tx1700\pardeftab720\partightenfactor0
+
+\f0\b\fs32 \AppleTypeServices\AppleTypeServicesF65539 \cf2 Step 3: Crete Controller:\
+\pard\tx220\tx720\tx1133\tx1700\pardeftab720\li720\fi-720\partightenfactor0
+\ls3\ilvl0
+\f1\b0\fs28 \AppleTypeServices\AppleTypeServicesF65539 \cf4 \kerning1\expnd0\expndtw0 {\listtext	1)	}php artisan make:controller PDFController\
+{\listtext	2)	}customise the controller\
+\pard\tx566\tx1133\tx1700\pardeftab720\partightenfactor0
+
+\f0\b\fs32 \AppleTypeServices\AppleTypeServicesF65539 \cf2 \expnd0\expndtw0\kerning0
+Step 4: Set Route\
+Step 5: Create View
+\f1\b0\fs28 \AppleTypeServices\AppleTypeServicesF65539 \cf4 \
+}

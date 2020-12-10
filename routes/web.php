@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PDFController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProjectController;
 
@@ -25,4 +26,7 @@ Route::prefix('projects')->group(function () {
 
 // Projects routes
 Route::resource('projects', ProjectController::class);
+
+// PDF routes
+Route::get('/getPDF', [PDFController::class, 'getPDF']);
 
